@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 // const { fontFamily } = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   darkMode: "class",
   theme: {
     extend: {
@@ -26,16 +28,6 @@ module.exports = {
          * @description 라벨 등: dark yellow green
          */
         PRIMARY_DARK: "#8da82c",
-
-        // /**
-        //  * @description 페이지 최상단 gradient의 시작 컬러입니다.
-        //  */
-        // GRADIENT_FROM: "#94ECE6",
-
-        // /**
-        //  * @description 페이지 최상단 gradient의 종료 컬러입니다.
-        //  */
-        // GRADIENT_TO: "#5F80D4",
       },
     },
   },
