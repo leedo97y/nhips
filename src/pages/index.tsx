@@ -1,3 +1,5 @@
+import Header from "@/pages/components/Header";
+import Footer from "@/pages/components/Footer";
 import Layout from "@/pages/components/Layout";
 import { NewsContentsType } from "@/types/DataType";
 import axios from "axios";
@@ -17,9 +19,13 @@ const Home = () => {
   }, [re]);
 
   return (
-    <Layout>
-      <div></div>
-    </Layout>
+    <>
+      <Header />
+      <Layout>
+        <div></div>
+      </Layout>
+      <Footer />
+    </>
   );
 };
 

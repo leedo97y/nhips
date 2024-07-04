@@ -22,20 +22,6 @@
     @apply cursor-pointer hover:cursor-pointer;
   }
 
-  .markdown a {
-    @apply font-mono bg-GRAY_DARK dark:bg-white py-[2px] px-1.5 rounded-md text-xs text-white dark:text-BLACK hover:bg-BLACK dark:hover:bg-GRAY_DARK;
-  }
-
-  .markdown h1,
-  .markdown h2 {
-    @apply pt-4 pb-2;
-  }
-
-  .markdown h3,
-  .markdown h4 {
-    @apply pt-4 pb-2;
-  }
-
   strong {
     @apply font-semibold;
   }
