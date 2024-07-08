@@ -3,6 +3,20 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: "GabiaHeuldot";
+    font-style: normal;
+    font-display: swap;
+    src: url(/fonts/GabiaHeuldot.otf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "Hakgyoansim";
+    font-style: normal;
+    font-display: swap;
+    src: url(/fonts/HakgyoansimSamulhamOTFR.otf) format("truetype");
+  }
+
   h1 {
     @apply font-semibold text-5xl py-2;
   }
@@ -28,10 +42,6 @@
 
   em {
     @apply text-GRAY_DARK;
-  }
-
-  code {
-    @apply bg-GRAY_LIGHT dark:bg-GRAY_EXTRADARK  py-[2px] px-1.5 rounded-md text-xs font-medium text-PRIMARY_DARK dark:text-PRIMARY;
   }
 
   blockquote {

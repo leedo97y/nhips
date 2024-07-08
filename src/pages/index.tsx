@@ -1,9 +1,9 @@
-import Header from "@/pages/components/Header";
-import Footer from "@/pages/components/Footer";
-import Layout from "@/pages/components/Layout";
 import { NewsContentsType } from "@/types/DataType";
-import axios from "axios";
 import { useEffect, useState } from "react";
+import axios from "axios";
+import Header from "@/pages/components/Header";
+import Layout from "@/pages/components/Layout";
+import MainHome from "@/pages/components/mainHome";
 
 const Home = () => {
   const [re, _setRe] = useState(false);
@@ -12,7 +12,7 @@ const Home = () => {
   ]);
 
   useEffect(() => {
-    axios.get(`/api/crawler`).then((res) => {
+    axios.get(`/api/social`).then((res) => {
       console.log(res);
       setData(res.data);
     });
@@ -22,9 +22,8 @@ const Home = () => {
     <>
       <Header />
       <Layout>
-        <div></div>
+        <MainHome key="mainhome" />
       </Layout>
-      <Footer />
     </>
   );
 };
