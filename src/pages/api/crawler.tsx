@@ -1,9 +1,8 @@
-import type { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
 import { load } from "cheerio";
 import { NewsContentsType } from "@/types/DataType";
 
-const getData = async (url: string) => {
+export const getData = async (url: string) => {
   try {
     const html = await axios.get(url);
     const $ = load(html.data);
@@ -28,11 +27,3 @@ const getData = async (url: string) => {
     console.log(e);
   }
 };
-
-const newsData = getData(process.env.NEXT_PUBLIC_NEWS_URL || "");
-
-const crawlerHandler = async (req: NextApiRequest, res: NextApiResponse) => {
-  res.status(200).json(await newsData);
-};
-
-export default crawlerHandler;
