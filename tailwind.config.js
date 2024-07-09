@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+const defaultTheme = require("tailwindcss/defaultTheme");
 
-const { fontFamily } = require("tailwindcss/defaultTheme");
+// const { fontFamily } = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
@@ -10,6 +11,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: { GABIA: ["GabiaHeuldot"], HAKGYO: ["Hakgyoansim"] },
+
+      screens: {
+        xs: "425px",
+        ...defaultTheme.screens,
+      },
+
       colors: {
         GRAY_LIGHT: "#f1f3f5",
         GRAY: "#adb5bd",
