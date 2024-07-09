@@ -1,16 +1,16 @@
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
-import MainHome from "@/components/mainHome";
+import SocialNewsRack from "@/social/SocialNewsRack";
 
-const Home = () => {
+const SocialPage = () => {
   return (
     <>
       <Header />
       <Layout>
-        <MainHome key="mainhome" />
+        <SocialNewsRack key="social" />
       </Layout>
     </>
   );
 };
 
-export default Home;
+export default SocialPage;
