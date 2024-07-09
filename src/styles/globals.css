@@ -17,6 +17,11 @@
     src: url(/fonts/HakgyoansimSamulhamOTFR.otf) format("truetype");
   }
 
+  html,
+  body {
+    @apply w-[100vw] h-[100vh] overflow-x-hidden;
+  }
+
   h1 {
     @apply font-semibold text-5xl py-2;
   }

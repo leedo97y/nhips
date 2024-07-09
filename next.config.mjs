@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "mimgnews.pstatic.net",
+        port: "",
+        pathname: "/image/**",
+      },
+    ],
+  },
 
   // cors 에러 해결
   async rewrites() {
