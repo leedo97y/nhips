@@ -1,6 +1,6 @@
 export interface NewsContentsType {
   id: number;
-  imgLink?: string;
+  imgSrc?: string;
   headline: string;
   link?: string;
   date: string;
