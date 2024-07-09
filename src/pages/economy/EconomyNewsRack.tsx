@@ -4,13 +4,13 @@ import { NewsContentsType } from "@/types/DataType";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const SocialNewsRack = () => {
+const EconomyNewsRack = () => {
   const [data, setData] = useState<NewsContentsType[]>([
     { id: 0, imgSrc: "", headline: "", link: "", date: "", pressInfo: "", content: "" },
   ]);
 
   useEffect(() => {
-    axios.get(`/api/social`).then((res) => {
+    axios.get(`/api/economy`).then((res) => {
       console.log(res);
       setData(res.data);
     });
@@ -20,10 +20,15 @@ const SocialNewsRack = () => {
     <div className="w-[100vw] h-full p-4 flex flex-col gap-10">
       <div className="flex items-center gap-2">
         <div className="w-[50px] h-[50px] rounded-full bg-BLACK">
-          <Image src={"/images/social.png"} alt="Social News page icon" width={100} height={100} />
+          <Image
+            src={"/images/economy.png"}
+            alt="Economy News page icon"
+            width={100}
+            height={100}
+          />
         </div>
 
-        <h3 className="font-HAKGYO text-[23px]">Social News</h3>
+        <h3 className="font-HAKGYO text-[23px]">Economy News</h3>
       </div>
       <div className="w-full h-full flex flex-wrap justify-center gap-5">
         {data.map((item, idx) => (
@@ -34,4 +39,4 @@ const SocialNewsRack = () => {
   );
 };
 
-export default SocialNewsRack;
+export default EconomyNewsRack;
