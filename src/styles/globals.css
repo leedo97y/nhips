@@ -17,6 +17,13 @@
     src: url(/fonts/HakgyoansimSamulhamOTFR.otf) format("truetype");
   }
 
+  @font-face {
+    font-family: "sam3";
+    font-style: normal;
+    font-display: swap;
+    src: url(/fonts/Sam3KRFont.ttf) format("truetype");
+  }
+
   html,
   body {
     @apply w-[100vw] h-[100vh] overflow-x-hidden;

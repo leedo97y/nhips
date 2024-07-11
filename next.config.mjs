@@ -34,6 +34,10 @@ const nextConfig = {
         source: "/:path*",
         destination: `${process.env.NEXT_PUBLIC_IT_NEWS_URL}/:path*`,
       },
+      {
+        source: "/:path*",
+        destination: `${process.env.NEXT_PUBLIC_RANKING_NEWS_URL}/:path*`,
+      },
     ];
   },
 };

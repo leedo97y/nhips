@@ -1,6 +1,6 @@
 import axios from "axios";
 import { load } from "cheerio";
-import { NewsContentsType } from "@/types/DataType";
+import { NewsContentsType, PressContentType, RankingType } from "@/types/DataType";
 
 export const getData = async (url: string) => {
   try {
@@ -28,6 +28,58 @@ export const getData = async (url: string) => {
     });
 
     return content;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const getRankingData = async (url: string) => {
+  try {
+    const html = await axios.get(url);
+    const $ = load(html.data);
+
+    let rkContent: RankingType = {
+      pressName: "",
+      pressImgSrc: "",
+      pressContent: [],
+    };
+    let pressContent: PressContentType[] = [];
+    const RANKING_SELECTOR = $(
+      "section.press_content > div.press > div.press_ranking_home > div.press_ranking_box > ul.press_ranking_list > li",
+    );
+    const PRESS_SELECTOR = $(
+      "section.press_content > header > .press_hd_main > .press_hd_main_inner",
+    );
+
+    RANKING_SELECTOR.map((idx, el) => {
+      pressContent[idx] = {
+        id: idx,
+        headline: $(el).find("a > .list_content > strong").text(),
+        link: $(el).find("a").attr("href"),
+        viewCount: $(el)
+          .find("a > .list_content > .list_view")
+          .text()
+          .replace(/\n/g, "")
+          .replace(/조회수/g, "")
+          .trim(),
+        imgSrc: $(el).find("a > .list_img > img").attr("src")?.split("?")[0],
+      };
+    });
+
+    rkContent = {
+      pressName: PRESS_SELECTOR.find(
+        ".press_hd_info > .press_hd_main_info > .press_hd_top > .press_hd_name > a",
+      )
+        .text()
+        .replace(/\n/g, "")
+        .replace(/\t/g, ""),
+      pressImgSrc: PRESS_SELECTOR.find(".press_hd_ci > a.press_hd_ci_image > img")
+        .attr("src")
+        ?.split("?")[0],
+      pressContent: [...pressContent],
+    };
+
+    return rkContent;
   } catch (e) {
     console.log(e);
   }
