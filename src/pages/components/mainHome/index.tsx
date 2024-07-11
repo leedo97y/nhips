@@ -1,7 +1,24 @@
 import Image from "next/image";
 import MobileHeader from "../MobileHeader";
+import InformationBox from "../InformationBox";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { RankingType } from "@/types/DataType";
 
 const MainHome = () => {
+  const [data, _setData] = useState<RankingType>({
+    pressName: "",
+    pressImgSrc: "",
+    pressContent: [],
+  });
+
+  useEffect(() => {
+    axios.get(`/api/ranking/MBC`).then((res) => {
+      console.log(res);
+      // setData(res.data);
+    });
+  }, []);
+
   return (
     <div className="w-[100vw] h-[100%] p-0">
       <MobileHeader />
@@ -116,6 +133,7 @@ const MainHome = () => {
           </div>
         </div>
       </div>
+      <InformationBox />
     </div>
   );
 };

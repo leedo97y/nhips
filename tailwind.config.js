@@ -10,7 +10,7 @@ module.exports = {
 
   theme: {
     extend: {
-      fontFamily: { GABIA: ["GabiaHeuldot"], HAKGYO: ["Hakgyoansim"] },
+      fontFamily: { GABIA: ["GabiaHeuldot"], HAKGYO: ["Hakgyoansim"], SAM3: ["sam3"] },
 
       screens: {
         xs: "425px",
@@ -50,6 +50,7 @@ module.exports = {
          * @description dark mode시 라벨 등: semi-dark yellow green
          */
         PRIMARY: "#b4d337",
+        BASIC: "#F2FF3F",
 
         /**
          * @description 라벨 등: dark yellow green
