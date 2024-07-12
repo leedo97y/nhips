@@ -1,24 +1,8 @@
 import Image from "next/image";
 import MobileHeader from "../MobileHeader";
 import InformationBox from "../InformationBox";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { RankingType } from "@/types/DataType";
 
 const MainHome = () => {
-  const [data, _setData] = useState<RankingType>({
-    pressName: "",
-    pressImgSrc: "",
-    pressContent: [],
-  });
-
-  useEffect(() => {
-    axios.get(`/api/ranking/MBC`).then((res) => {
-      console.log(res);
-      // setData(res.data);
-    });
-  }, []);
-
   return (
     <div className="w-[100vw] h-[100%] p-0">
       <MobileHeader />
@@ -37,9 +21,9 @@ const MainHome = () => {
           ** 뉴스 랭킹 페이지, 오늘의 날씨를 추가할 예정이예요.
         </p>
       </div>
-      <div className="w-[100%] h-[100%] flex flex-col gap-10 md:p-8 p-4 md:mt-10 mt-3">
+      <div className="w-[100%] h-[100%] flex flex-col gap-10 md:p-8 p-4 md:mt-10 mt-8">
         <p className="md:hidden flex font-HAKGYO text-lg -mb-5">Topics</p>
-        <div className="flex md:gap-10 gap-4 justify-center items-center">
+        <div className="flex md:gap-10 gap-2 justify-center items-center">
           <div className="flex flex-col gap-1 justify-center items-center">
             <div className="md:w-full md:h-full w-[50px] h-[50px] rounded-full bg-BLACK hover:animate-bounce">
               <a
@@ -58,7 +42,7 @@ const MainHome = () => {
                 />
               </a>
             </div>
-            <span className="md:text-lg text-[10px] font-HAKGYO">Social</span>
+            <span className="md:text-lg text-[11px] font-HAKGYO">Social</span>
           </div>
           <div className="flex flex-col gap-1 justify-center items-center">
             <div className="md:w-full md:h-full w-[50px] h-[50px] rounded-full bg-BLACK hover:animate-bounce">
@@ -77,7 +61,7 @@ const MainHome = () => {
                 />
               </a>
             </div>
-            <span className="md:text-lg text-[10px] font-HAKGYO">Economy</span>
+            <span className="md:text-lg text-[11px] font-HAKGYO">Economy</span>
           </div>
           <div className="flex flex-col gap-1 justify-center items-center">
             <div className="md:w-full md:h-full w-[50px] h-[50px] rounded-full bg-BLACK hover:animate-bounce">
@@ -91,7 +75,7 @@ const MainHome = () => {
                 />
               </a>
             </div>
-            <span className="md:text-lg text-[10px] font-HAKGYO">World</span>
+            <span className="md:text-lg text-[11px] font-HAKGYO">World</span>
           </div>
           <div className="flex flex-col gap-1 justify-center items-center">
             <div className="md:w-full md:h-full w-[50px] h-[50px] rounded-full bg-BLACK hover:animate-bounce">
@@ -110,7 +94,7 @@ const MainHome = () => {
                 />
               </a>
             </div>
-            <span className="md:text-lg text-[10px] font-HAKGYO">Politics</span>
+            <span className="md:text-lg text-[11px] font-HAKGYO">Politics</span>
           </div>
           <div className="flex flex-col gap-1 justify-center items-center">
             <div className="md:w-full md:h-full w-[50px] h-[50px] rounded-full bg-BLACK hover:animate-bounce">
@@ -129,7 +113,7 @@ const MainHome = () => {
                 />
               </a>
             </div>
-            <span className="md:text-lg text-[10px] font-HAKGYO">IT</span>
+            <span className="md:text-lg text-[11px] font-HAKGYO">IT</span>
           </div>
         </div>
       </div>
