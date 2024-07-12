@@ -32,7 +32,7 @@ const PressRankingRack = ({ pressName, pressImgSrc, pressContent }: RankingType)
     <div className="w-[100vw] h-full p-4 flex flex-col gap-10">
       <div className="flex items-center gap-3">
         {pressImgSrc && (
-          <div className="md:w-[50px] w-[45px] md:h-[50px] h-[45px] rounded-full bg-BLACK">
+          <div className="md:w-[50px] w-[45px] md:h-[50px] h-[45px] flex flex-col justify-center rounded-full bg-BLACK">
             <Image
               src={pressImgSrc}
               alt="IT/Science News page icon"
