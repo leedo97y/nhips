@@ -8,6 +8,12 @@ const nextConfig = {
         port: "",
         pathname: "/image/**",
       },
+      {
+        protocol: "https",
+        hostname: "imgnews.pstatic.net",
+        port: "",
+        pathname: "/image/**",
+      },
     ],
   },
 
@@ -15,27 +21,27 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/:path*",
+        source: "/api/:path*",
         destination: `${process.env.NEXT_PUBLIC_SOCIAL_NEWS_URL}/:path*`,
       },
       {
-        source: "/:path*",
+        source: "/api/:path*",
         destination: `${process.env.NEXT_PUBLIC_ECONOMY_NEWS_URL}/:path*`,
       },
       {
-        source: "/:path*",
+        source: "/api/:path*",
         destination: `${process.env.NEXT_PUBLIC_POLITICS_NEWS_URL}/:path*`,
       },
       {
-        source: "/:path*",
+        source: "/api/:path*",
         destination: `${process.env.NEXT_PUBLIC_WORLD_NEWS_URL}/:path*`,
       },
       {
-        source: "/:path*",
+        source: "/api/:path*",
         destination: `${process.env.NEXT_PUBLIC_IT_NEWS_URL}/:path*`,
       },
       {
-        source: "/:path*",
+        source: "/api/:path*",
         destination: `${process.env.NEXT_PUBLIC_RANKING_NEWS_URL}/:path*`,
       },
     ];
