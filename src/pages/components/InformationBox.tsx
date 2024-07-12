@@ -1,30 +1,12 @@
-import React from "react";
-import PressBadge from "./PressBadge";
+import RankingSection from "./RankingSection";
 
 const InformationBox = () => {
   return (
-    <div className="w-full h-[300px] flex p-8">
-      <div className="w-[55%] flex flex-col gap-5">
-        <h4 className="font-SAM3 text-[28px]">Ranking</h4>
-        <div className="flex flex-col gap-5">
-          <div className="w-full flex gap-5">
-            <PressBadge name="SBS" />
-            <PressBadge name="KBS" />
-            <PressBadge name="MBC" />
-          </div>
-          <div className="w-full flex gap-5 pl-[50px]">
-            <PressBadge name="YTN" />
-            <PressBadge name="MBN" />
-            <PressBadge name="JTBC" />
-          </div>
-          <div className="w-full flex gap-5">
-            <PressBadge name="YH" />
-            <PressBadge name="CA" />
-            <PressBadge name="HAN" />
-          </div>
-        </div>
+    <div className="w-full md:h-[300px] h-[500px] flex justify-center md:mt-5 mt-8">
+      <div className="md:w-[850px] w-full h-full flex flex-col md:flex-row md:gap-0 gap-14 md:p-8 p-5">
+        <RankingSection />
+        <div className="md:w-[45%] w-full h-full flex flex-col gap-5 p-5 bg-CARD_BG_DARK rounded-md"></div>
       </div>
-      <div className="w-[45%] p-5 bg-CARD_BG_DARK rounded-md"></div>
     </div>
   );
 };
