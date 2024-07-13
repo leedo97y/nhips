@@ -49,11 +49,20 @@ const WeatherSection = () => {
             {month}/{date}
           </p>
           <p>{weatherData?.name}</p>
-          <p className="mt-3">습도 : {weatherData?.main.humidity}%</p>
-          <div className="w-full flex items-center gap-3">
-            <div
-              className={`w-[18px] h-[18px] rounded-full bg-${airQuality?.list[0].main.aqi === 1 ? "blue" : airQuality?.list[0].main.aqi === 2 ? "green" : airQuality?.list[0].main.aqi === 3 ? "yellow" : airQuality?.list[0].main.aqi === 4 ? "orange" : "red"}-500`}
-            ></div>
+          <div className="w-full flex gap-3 items-center mt-3 -md-1">
+            <span
+              className={`w-[18px] h-[18px] rounded-full flex items-center justify-center bg-${weatherData?.main.humidity >= 40 && weatherData?.main.humidity <= 55 ? "blue" : weatherData?.main.humidity > 55 && weatherData?.main.humidity <= 65 ? "green" : weatherData?.main.humidity > 65 && weatherData?.main.humidity <= 70 ? "yellow" : weatherData?.main.humidity > 70 && weatherData?.main.humidity <= 75 ? "orange" : "red"}-500`}
+            >
+              H
+            </span>
+            <span>{weatherData?.main.humidity}%</span>
+          </div>
+          <div className="w-full flex gap-3 items-center">
+            <span
+              className={`w-[18px] h-[18px] rounded-full flex items-center justify-center bg-${airQuality?.list[0].main.aqi === 1 ? "blue" : airQuality?.list[0].main.aqi === 2 ? "green" : airQuality?.list[0].main.aqi === 3 ? "yellow" : airQuality?.list[0].main.aqi === 4 ? "orange" : "red"}-500`}
+            >
+              A
+            </span>
             <span>
               {airQuality?.list[0].main.aqi === 1
                 ? "Good"
@@ -76,7 +85,7 @@ const WeatherSection = () => {
               height={100}
             />
           </div>
-          <span>{weatherData?.weather[0].description}</span>
+          <span className="text-base">{weatherData?.weather[0].description}</span>
         </div>
       </div>
       <div className="h-[50%] flex justify-end items-center text-7xl">
