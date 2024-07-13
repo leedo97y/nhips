@@ -1,13 +1,13 @@
 import axios from "axios";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { useGetLocation } from "src/store/store";
+import { useAirQualityStore, useGetLocation, useWeatherStore } from "src/store/store";
 import { date, month } from "src/utils/useFulFunc";
 
 const WeatherSection = () => {
   const { lat, setLat, lon, setLon } = useGetLocation();
-  const [weatherData, setWeatherData] = useState<any>();
-  const [airQuality, setAirQuality] = useState<any>();
+  const { weatherData, setWeatherData } = useWeatherStore();
+  const { airQuality, setAirQuality } = useAirQualityStore();
 
   useEffect(() => {
     setLat(navigator.geolocation.getCurrentPosition((position) => position.coords.latitude));
