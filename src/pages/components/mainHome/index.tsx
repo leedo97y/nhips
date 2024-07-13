@@ -14,11 +14,8 @@ const MainHome = () => {
         <p className="md:text-lg text-sm">
           아래 아이콘을 클릭하면 각 Topic 뉴스 페이지로 이동해요!
         </p>
-        <p className="md:text-sm text-[11px] md:mt-6 mt-3 md:text-GRAY text-GRAY_DARK">
+        <p className="md:text-sm text-[11px] md:mt-5 mt-3 md:text-GRAY text-GRAY_DARK">
           ** 아래 아이콘은 각 Topic 영문 첫글자를 따서 만들어졌어요 !
-        </p>
-        <p className="md:text-sm text-[11px] md:mt-0 -mt-1 md:text-GRAY text-GRAY_DARK">
-          ** 뉴스 랭킹 페이지, 오늘의 날씨를 추가할 예정이예요.
         </p>
       </div>
       <div className="w-[100%] h-[100%] flex flex-col gap-10 md:p-8 p-4 md:mt-10 mt-8">
