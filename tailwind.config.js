@@ -8,6 +8,13 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   darkMode: "class",
 
+  safelist: [
+    {
+      pattern: /bg-(red|orange|yellow|green|blue)-(100|200|300|400|500)/,
+      variants: ["lg", "hover", "focus", "lg:hover"],
+    },
+  ],
+
   theme: {
     extend: {
       fontFamily: { GABIA: ["GabiaHeuldot"], HAKGYO: ["Hakgyoansim"], SAM3: ["sam3"] },
