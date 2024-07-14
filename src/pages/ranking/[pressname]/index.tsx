@@ -4,7 +4,7 @@ import axios from "axios";
 import { RankingType } from "@/types/DataType";
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
-import PressRankingRack from "./PressRankingRack";
+import RankingRack from "@/components/RankingRack";
 
 const PressRankingPage = () => {
   const router = useRouter();
@@ -27,7 +27,7 @@ const PressRankingPage = () => {
     <>
       <Header />
       <Layout>
-        <PressRankingRack key="mainhome" {...data} />
+        <RankingRack key="mainhome" {...data} />
       </Layout>
     </>
   );
