@@ -63,4 +63,8 @@ const PressRankingRack = ({ pressName, pressImgSrc, pressContent }: RankingType)
   );
 };
 
+export async function getServerSideProps(context: any) {
+  return { props: { pressname: context.params.pressname } };
+}
+
 export default PressRankingRack;

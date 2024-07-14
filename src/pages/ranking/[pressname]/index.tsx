@@ -4,7 +4,7 @@ import axios from "axios";
 import { RankingType } from "@/types/DataType";
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
-import RankingRack from "@/components/RankingRack";
+import RankingRack from "./RankingRack";
 
 const PressRankingPage = () => {
   const router = useRouter();
