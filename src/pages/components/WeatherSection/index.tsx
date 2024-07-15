@@ -10,8 +10,14 @@ const WeatherSection = () => {
   const { airQuality, setAirQuality } = useAirQualityStore();
 
   useEffect(() => {
-    setLat(navigator.geolocation.getCurrentPosition((position) => position.coords.latitude));
-    setLon(navigator.geolocation.getCurrentPosition((position) => position.coords.longitude));
+    navigator.geolocation.getCurrentPosition((position) => {
+      // console.log(position.coords.latitude);
+      setLat(position.coords.latitude);
+    });
+    navigator.geolocation.getCurrentPosition((position) => {
+      // console.log(position.coords.longitude);
+      setLon(position.coords.longitude);
+    });
 
     const getWeather = async () => {
       return await axios
@@ -19,8 +25,8 @@ const WeatherSection = () => {
           `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.NEXT_PUBLIC_W_API_KEY}&units=metric&lang=kr`,
         )
         .then((res) => {
+          // console.log(res.data);
           setWeatherData(res.data);
-          console.log(res.data);
         })
         .catch((e) => console.error(e));
     };
@@ -31,15 +37,15 @@ const WeatherSection = () => {
           `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${process.env.NEXT_PUBLIC_W_API_KEY}`,
         )
         .then((res) => {
+          // console.log(res.data);
           setAirQuality(res.data);
-          console.log(res.data);
         })
         .catch((e) => console.error(e));
     };
 
     getWeather();
     getAirQuality();
-  }, [lat, lon]);
+  }, []);
 
   return (
     <div className="md:w-[47%] w-full h-full flex flex-col gap-5 p-5 bg-CARD_BG_DARK rounded-md font-SAM3">
