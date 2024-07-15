@@ -45,7 +45,7 @@ const WeatherSection = () => {
 
     getWeather();
     getAirQuality();
-  }, []);
+  }, [lat, lon]);
 
   return (
     <div className="md:w-[47%] w-full h-full flex flex-col gap-5 p-5 bg-CARD_BG_DARK rounded-md font-SAM3">
