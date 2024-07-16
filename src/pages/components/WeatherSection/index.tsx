@@ -84,12 +84,14 @@ const WeatherSection = () => {
         </div>
         <div className="flex flex-col items-end">
           <div className="w-[70px] h-[70px]">
-            <Image
-              src={`https://openweathermap.org/img/wn/${weatherData?.weather[0].icon}@2x.png`}
-              alt="weather icon"
-              width={100}
-              height={100}
-            />
+            {weatherData?.weather[0].icon && (
+              <Image
+                src={`https://openweathermap.org/img/wn/${weatherData?.weather[0].icon}@2x.png`}
+                alt="weather icon"
+                width={100}
+                height={100}
+              />
+            )}
           </div>
           <span className="text-base">{weatherData?.weather[0].description}</span>
         </div>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { PressContentType } from "@/types/DataType";
 
-const NewsList = ({ list_id, headline, imgSrc, link, viewCount }: PressContentType & any) => {
+const NewsList = ({ list_id, headline, imgSrc, link, viewCount }: PressContentType | any) => {
   return (
     <div className="md:w-96 w-full max-h-full p-3 dark:bg-CARD_BG_DARK bg-CARD_BG_LIGHT rounded-sm">
       {headline ? (
