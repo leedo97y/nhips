@@ -31,8 +31,8 @@ const PressRankingRack = ({ pressName, pressImgSrc, pressContent }: RankingType)
   return (
     <div className="w-[100vw] h-full p-4 flex flex-col gap-10">
       <div className="flex items-center gap-3">
-        {pressImgSrc && (
-          <div className="md:w-[50px] w-[45px] md:h-[50px] h-[45px] flex flex-col justify-center rounded-full bg-BLACK">
+        <div className="md:w-[50px] w-[45px] md:h-[50px] h-[45px] flex flex-col justify-center rounded-full bg-BLACK">
+          {pressImgSrc ? (
             <Image
               src={pressImgSrc}
               alt="IT/Science News page icon"
@@ -40,8 +40,10 @@ const PressRankingRack = ({ pressName, pressImgSrc, pressContent }: RankingType)
               height={100}
               className="rounded-full"
             />
-          </div>
-        )}
+          ) : (
+            ""
+          )}
+        </div>
         <div>
           <h3 className="font-HAKGYO md:text-[23px] text-lg">{pressName}</h3>
           <p className="md:text-xs text-[11px]">이전 한시간 동안의 1-20위 뉴스를 알려줍니다.</p>
@@ -50,12 +52,12 @@ const PressRankingRack = ({ pressName, pressImgSrc, pressContent }: RankingType)
       <div className="w-full h-full flex md:flex-row flex-col gap-5">
         <div className="w-full h-full flex flex-col flex-wrap justify-center items-end gap-5">
           {colLeft.map((item, idx) => (
-            <NewsList key={idx} {...item} />
+            <NewsList key={idx} {...item} list_id={idx} />
           ))}
         </div>
         <div className="w-full h-full flex flex-col flex-wrap justify-center items-start gap-5">
           {colRight.map((item, idx) => (
-            <NewsList key={idx} {...item} />
+            <NewsList key={idx} {...item} list_id={idx} />
           ))}
         </div>
       </div>
