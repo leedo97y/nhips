@@ -11,7 +11,7 @@ const EconomyNewsRack = () => {
 
   useEffect(() => {
     axios.get(`/api/economy`).then((res) => {
-      console.log(res);
+      // console.log(res);
       setData(res.data);
     });
   }, []);
@@ -27,7 +27,6 @@ const EconomyNewsRack = () => {
             height={100}
           />
         </div>
-
         <h3 className="font-HAKGYO text-[23px]">Economy News</h3>
       </div>
       <div className="w-full h-full flex flex-wrap justify-center gap-5">

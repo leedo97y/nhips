@@ -18,7 +18,7 @@ const PressRankingPage = () => {
 
   useEffect(() => {
     axios.get(`/api/ranking/${pressname}`).then((res) => {
-      console.log(res);
+      // console.log(res);
       setData(res.data);
     });
   }, []);

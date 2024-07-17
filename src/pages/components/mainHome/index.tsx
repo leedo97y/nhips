@@ -23,13 +23,7 @@ const MainHome = () => {
         <div className="flex md:gap-10 gap-2 justify-center items-center">
           <div className="flex flex-col gap-1 justify-center items-center">
             <div className="md:w-full md:h-full w-[50px] h-[50px] rounded-full bg-BLACK hover:animate-bounce">
-              <a
-                className="w-full h-full"
-                target="_blank"
-                rel="noreferrer"
-                href="/social"
-                aria-label="Social News page link"
-              >
+              <a className="w-full h-full" href="/social" aria-label="Social News page link">
                 <Image
                   src={"/images/social.png"}
                   alt={"Social News page icon"}
@@ -43,12 +37,7 @@ const MainHome = () => {
           </div>
           <div className="flex flex-col gap-1 justify-center items-center">
             <div className="md:w-full md:h-full w-[50px] h-[50px] rounded-full bg-BLACK hover:animate-bounce">
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="/economy"
-                aria-label="Economy News page link"
-              >
+              <a href="/economy" aria-label="Economy News page link">
                 <Image
                   src={"/images/economy.png"}
                   alt={"Economy News page icon"}
@@ -62,7 +51,7 @@ const MainHome = () => {
           </div>
           <div className="flex flex-col gap-1 justify-center items-center">
             <div className="md:w-full md:h-full w-[50px] h-[50px] rounded-full bg-BLACK hover:animate-bounce">
-              <a target="_blank" rel="noreferrer" href="/world" aria-label="World News page link">
+              <a href="/world" aria-label="World News page link">
                 <Image
                   src={"/images/world.png"}
                   alt={"World News page icon"}
@@ -76,12 +65,7 @@ const MainHome = () => {
           </div>
           <div className="flex flex-col gap-1 justify-center items-center">
             <div className="md:w-full md:h-full w-[50px] h-[50px] rounded-full bg-BLACK hover:animate-bounce">
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="/politics"
-                aria-label="Politics News page link"
-              >
+              <a href="/politics" aria-label="Politics News page link">
                 <Image
                   src={"/images/politics.png"}
                   alt={"Politics News page icon"}
@@ -95,12 +79,7 @@ const MainHome = () => {
           </div>
           <div className="flex flex-col gap-1 justify-center items-center">
             <div className="md:w-full md:h-full w-[50px] h-[50px] rounded-full bg-BLACK hover:animate-bounce">
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="/it_science"
-                aria-label="IT/Science News page link"
-              >
+              <a href="/it_science" aria-label="IT/Science News page link">
                 <Image
                   src={"/images/it.png"}
                   alt={"IT/Science News page icon"}

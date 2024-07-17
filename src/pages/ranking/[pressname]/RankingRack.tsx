@@ -46,7 +46,9 @@ const PressRankingRack = ({ pressName, pressImgSrc, pressContent }: RankingType)
         </div>
         <div>
           <h3 className="font-HAKGYO md:text-[23px] text-lg">{pressName}</h3>
-          <p className="md:text-xs text-[11px]">이전 한시간 동안의 1-20위 뉴스를 알려줍니다.</p>
+          {pressName && (
+            <p className="md:text-xs text-[11px]">이전 한시간 동안의 1-20위 뉴스를 알려줍니다.</p>
+          )}
         </div>
       </div>
       <div className="w-full h-full flex md:flex-row flex-col gap-5">
@@ -57,7 +59,7 @@ const PressRankingRack = ({ pressName, pressImgSrc, pressContent }: RankingType)
         </div>
         <div className="w-full h-full flex flex-col flex-wrap justify-center items-start gap-5">
           {colRight.map((item, idx) => (
-            <NewsList key={idx} {...item} list_id={idx} />
+            <NewsList key={idx} {...item} list_id={idx + 10} />
           ))}
         </div>
       </div>

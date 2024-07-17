@@ -11,7 +11,7 @@ const ITNewsRack = () => {
 
   useEffect(() => {
     axios.get(`/api/it`).then((res) => {
-      console.log(res);
+      // console.log(res);
       setData(res.data);
     });
   }, []);
@@ -22,7 +22,6 @@ const ITNewsRack = () => {
         <div className="w-[50px] h-[50px] rounded-full bg-BLACK">
           <Image src={"/images/it.png"} alt="IT/Science News page icon" width={100} height={100} />
         </div>
-
         <h3 className="font-HAKGYO text-[23px]">IT/Science News</h3>
       </div>
       <div className="w-full h-full flex flex-wrap justify-center gap-5">
