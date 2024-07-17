@@ -1,40 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Nhips = News + Chips
 
-## Getting Started
+<div align="center"><img alt="logoImage" src="./public/images/logo.png" width="200px" height="200px" />
+</div>
 
-First, run the development server:
+<br>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+・ 배포 URL : [https://nhips.vercel.app](https://nhips.vercel.app)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Nhips 소개
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- News와 Chips의 합성어로 뉴스를 가볍게 간식처럼 즐길 순 없을까?하는 생각으로 만들었어요.
+- Nhips의 뉴스 API는 네이버 뉴스를 크롤링하여 만들었어요.
+- 사회, 경제, 세계, 정치, IT 뉴스를 볼 수 있어요.
+- 언론사별 랭킹 뉴스를 볼 수 있어요.
+- 현재 위치의 날씨를 간단히 알 수 있어요.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<br>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 개발 환경
 
-## Learn More
+- FE : Next.js, Typescript, Tailwindcss, zustand, cheerio
+- Deploy : Vercel
+- Design : [Figma](https://www.figma.com/design/2H1hVZBGeWsm2HYF433A0V/nhips?node-id=0-1&t=oN0DhzkH7euDqiWU-1)
 
-To learn more about Next.js, take a look at the following resources:
+<br>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 페이지별 기능
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 메인 페이지
 
-## Deploy on Vercel
+- 사회, 경제, 세계, 정치, IT 뉴스를 볼 수 있습니다.
+- 언론사별 랭킹 뉴스 페이지로 진입할 수 있는 버튼이 있습니다.
+- 현재 위치의 간단한 날씨 및 대기 오염도를 알 수 있습니다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| 메인 페이지 |
+|----------|
+| <img alt="logoImage" src="./public/images/mainpage.png"  width="450px" /> |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<br>
+
+### 분야별 뉴스 페이지
+
+- 메인 페이지 토픽 버튼을 통해 진입 가능합니다.
+- 각 분야별 뉴스를 확인할 수 있습니다.
+- 뉴스 카드의 헤드라인이나 사진을 클릭하면 뉴스 상세 페이지로 이동합니다.
+
+
+| 분야별 뉴스 페이지 |
+|----------|
+| <img alt="logoImage" src="./public/images/newssection.png" width="450px"  /> |
+
+<br>
+
+### 언론사별 랭킹 페이지
+
+- 메인 페이지 랭킹 섹션의 언론사 버튼을 눌러서 진입 가능합니다.
+- 언론사별 1시간 동안의 1-20위까지의 뉴스 랭킹을 알려줍니다.
+- 각 뉴스의 이미지와 헤드라인을 클릭하면 상세 뉴스 페이지로 이동합니다.
+
+| 언론사별 랭킹 페이지 |
+|----------|
+| <img alt="logoImage" src="./public/images/newsranking.png" width="450px"  /> |
+
+
+<br>
