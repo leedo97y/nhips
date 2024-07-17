@@ -5,12 +5,12 @@ const NewsCard = ({ headline, imgSrc, link, pressInfo, date, content }: NewsCont
   return (
     <>
       {headline ? (
-        <div className="w-96 max-h-full p-3 flex flex-col gap-3 dark:bg-CARD_BG_DARK bg-CARD_BG_LIGHT rounded-sm">
+        <div className="w-96 max-h-full p-3 flex flex-col gap-4 dark:bg-CARD_BG_DARK bg-CARD_BG_LIGHT rounded-sm">
           <div className="flex flex-col gap-2">
             <a href={link} target="_blank" rel="noreferrer">
-              <h4 className="text-[20px] font-semibold">{headline}</h4>
+              <h4 className="text-lg font-semibold">{headline}</h4>
             </a>
-            <p className="flex justify-between text-sm">
+            <p className="flex justify-between text-xs">
               <span>{pressInfo}</span>
               <span>{date}</span>
             </p>
@@ -22,7 +22,7 @@ const NewsCard = ({ headline, imgSrc, link, pressInfo, date, content }: NewsCont
               </div>
             </a>
           )}
-          <p className="whitespace-pre-wrap text-sm">{content}...</p>
+          <p className="whitespace-pre-wrap text-[13px]">{content}...</p>
         </div>
       ) : (
         <div className="flex justify-center">

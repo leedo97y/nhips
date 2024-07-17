@@ -11,7 +11,7 @@ const PoliticsNewsRack = () => {
 
   useEffect(() => {
     axios.get(`/api/politics`).then((res) => {
-      console.log(res);
+      // console.log(res);
       setData(res.data);
     });
   }, []);
