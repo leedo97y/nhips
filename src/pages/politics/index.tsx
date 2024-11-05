@@ -1,13 +1,13 @@
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
-import PoliticsNewsRack from "@/politics/PoliticsNewsRack";
+import NewsRack from "@/components/NewsItems/NewsRack";
 
 const politicsPage = () => {
   return (
     <>
       <Header />
       <Layout>
-        <PoliticsNewsRack key="politics" />
+        <NewsRack />
       </Layout>
     </>
   );
