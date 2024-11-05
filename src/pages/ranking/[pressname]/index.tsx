@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { RankingType } from "@/types/DataType";
-import Header from "@/components/Header";
 import Layout from "@/components/Layout";
 import RankingRack from "./RankingRack";
 
@@ -27,7 +26,6 @@ const PressRankingPage = () => {
 
   return (
     <>
-      <Header />
       <Layout>
         <RankingRack key="mainhome" {...data} />
       </Layout>
