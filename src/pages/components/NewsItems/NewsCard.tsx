@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { NewsContentsType } from "@/types/DataType";
 
@@ -18,7 +20,7 @@ const NewsCard = ({ headline, imgSrc, link, pressInfo, date, content }: NewsCont
           {imgSrc && (
             <a href={link} target="_blank" rel="noreferrer">
               <div className="w-full h-[200px] flex justify-center">
-                <Image src={imgSrc} alt="News Image" width={360} height={100} />
+                <Image src={imgSrc} alt="News Image" width={360} height={100} priority />
               </div>
             </a>
           )}
