@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PressContentType } from "@/types/DataType";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
 
 const NewsList = ({ list_id, headline, imgSrc, link, viewCount }: PressContentType | any) => {
   return (
@@ -20,10 +21,10 @@ const NewsList = ({ list_id, headline, imgSrc, link, viewCount }: PressContentTy
             <a href={link} target="_blank" rel="noreferrer">
               <h4 className="text-xs">{headline}</h4>
             </a>
-            <p className="text-xs flex gap-2">
-              <span className="">view</span>
-              {viewCount}
-            </p>
+            <div className="text-xs flex gap-2 flex-row items-center">
+              <MdOutlineRemoveRedEye />
+              <span className="font-medium">{viewCount}</span>
+            </div>
           </div>
         </div>
       ) : (

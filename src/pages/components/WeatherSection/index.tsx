@@ -2,7 +2,7 @@ import axios from "axios";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { useAirQualityStore, useGetLocation, useWeatherStore } from "src/store/store";
-import { date, month } from "src/utils/useFulFunc";
+import { date, month } from "src/utils/useDate";
 
 const WeatherSection = () => {
   const { lat, setLat, lon, setLon } = useGetLocation();

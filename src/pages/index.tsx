@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import Layout from "@/components/Layout";
 import MainHome from "@/components/mainHome";
 import { dehydrate, QueryClient } from "@tanstack/react-query";
@@ -8,7 +7,6 @@ import { fetchNewsDatas } from "../hooks/useNewsDatas";
 const Home = () => {
   return (
     <>
-      <Header />
       <Layout>
         <MainHome />
       </Layout>
@@ -22,36 +20,34 @@ export const getStaticProps: GetStaticProps = async () => {
 
   // prefetch
   await Promise.all([
-    queryClient.prefetchQuery({ queryKey: ["social"], queryFn: () => fetchNewsDatas("social") }),
-    await Promise.all([
-      queryClient.prefetchQuery({
-        queryKey: ["social"],
-        queryFn: () => fetchNewsDatas("social"),
-      }),
-      queryClient.prefetchQuery({
-        queryKey: ["economy"],
-        queryFn: () => fetchNewsDatas("economy"),
-      }),
-      queryClient.prefetchQuery({
-        queryKey: ["politics"],
-        queryFn: () => fetchNewsDatas("politics"),
-      }),
-      queryClient.prefetchQuery({
-        queryKey: ["it"],
-        queryFn: () => fetchNewsDatas("it"),
-      }),
-      queryClient.prefetchQuery({
-        queryKey: ["world"],
-        queryFn: () => fetchNewsDatas("world"),
-      }),
-    ]),
+    queryClient.prefetchQuery({
+      queryKey: ["social"],
+      queryFn: () => fetchNewsDatas("social"),
+    }),
+    queryClient.prefetchQuery({
+      queryKey: ["economy"],
+      queryFn: () => fetchNewsDatas("economy"),
+    }),
+    queryClient.prefetchQuery({
+      queryKey: ["politics"],
+      queryFn: () => fetchNewsDatas("politics"),
+    }),
+    queryClient.prefetchQuery({
+      queryKey: ["it"],
+      queryFn: () => fetchNewsDatas("it"),
+    }),
+    queryClient.prefetchQuery({
+      queryKey: ["world"],
+      queryFn: () => fetchNewsDatas("world"),
+    }),
   ]);
 
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
     },
-    revalidate: 60, // 60초마다 데이터 재검증
+    // 60초마다 데이터 재검증
+    revalidate: 60,
   };
 };
 

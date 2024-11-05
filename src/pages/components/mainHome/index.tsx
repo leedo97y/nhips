@@ -1,5 +1,4 @@
 import Image from "next/image";
-import MobileHeader from "../MobileHeader";
 import InformationBox from "../InformationBox";
 import politics from "../../../../public/images/politics.png";
 import social from "../../../../public/images/social.png";
@@ -10,7 +9,6 @@ import it from "../../../../public/images/it.png";
 const MainHome = () => {
   return (
     <div className="w-[100vw] h-[100%] p-0">
-      <MobileHeader />
       <div className="w-[100vw] h-80 mt-[20px] bg-MAIN_BG_LIGHT dark:bg-MAIN_BG_DARK p-8 flex flex-col justify-center items-center gap-2">
         <p className="md:text-xl text-lg">Nhips = 📰 + 🍪 !</p>
         <p className="md:text-lg text-sm">
