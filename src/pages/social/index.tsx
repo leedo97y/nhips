@@ -1,13 +1,13 @@
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
-import SocialNewsRack from "@/social/SocialNewsRack";
+import NewsRack from "@/components/NewsItems/NewsRack";
 
 const SocialPage = () => {
   return (
     <>
       <Header />
       <Layout>
-        <SocialNewsRack key="social" />
+        <NewsRack />
       </Layout>
     </>
   );
