@@ -6,7 +6,23 @@ const MBCRankingNews = getRankingData(
 );
 
 const crawlerHandler = async (req: NextApiRequest, res: NextApiResponse) => {
-  res.status(200).json(await MBCRankingNews);
+  try {
+    const ifNoneMatch = req.headers["if-none-match"];
+    const data = await MBCRankingNews;
+
+    const etag = `"${Buffer.from(JSON.stringify(data)).toString("base64")}"`;
+
+    if (ifNoneMatch === etag) {
+      res.status(304).end();
+      return;
+    }
+
+    res.setHeader("ETag", etag);
+    res.status(200).json(data);
+  } catch (error) {
+    console.error("Error fetching ranking data:", error);
+    res.status(500).json({ message: "서버 오류로 랭킹 데이터를 가져올 수 없습니다." });
+  }
 };
 
 export default crawlerHandler;
