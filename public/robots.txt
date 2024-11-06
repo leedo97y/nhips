@@ -1,0 +1,15 @@
+# Block all crawlers for below pages
+User-agent: *
+Disallow: /social
+Disallow: /economy
+Disallow: /world
+Disallow: /politics
+Disallow: /it_science
+Disallow: /ranking/*
+
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+Sitemap: https://doyeonlee.vercel.app/sitemap.xml
