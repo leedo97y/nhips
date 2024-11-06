@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { RankingType } from "@/types/DataType";
-import NewsList from "@/components/NewsItems/NewsList";
+import RankingNewsList from "@/components/NewsItems/RankingNewsList";
 
 const PressRankingRack = ({ pressName, pressImgSrc, pressContent }: RankingType) => {
   const colLeft = [
@@ -39,6 +39,7 @@ const PressRankingRack = ({ pressName, pressImgSrc, pressContent }: RankingType)
               width={100}
               height={100}
               className="rounded-full"
+              priority
             />
           ) : (
             ""
@@ -54,12 +55,12 @@ const PressRankingRack = ({ pressName, pressImgSrc, pressContent }: RankingType)
       <div className="w-full h-full flex md:flex-row flex-col gap-5">
         <div className="w-full h-full flex flex-col flex-wrap justify-center items-end gap-5">
           {colLeft.map((item, idx) => (
-            <NewsList key={idx} {...item} list_id={idx} />
+            <RankingNewsList key={idx} {...item} list_id={idx} />
           ))}
         </div>
         <div className="w-full h-full flex flex-col flex-wrap justify-center items-start gap-5">
           {colRight.map((item, idx) => (
-            <NewsList key={idx} {...item} list_id={idx + 10} />
+            <RankingNewsList key={idx} {...item} list_id={idx + 10} />
           ))}
         </div>
       </div>
