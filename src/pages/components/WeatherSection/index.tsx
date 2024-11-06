@@ -49,13 +49,13 @@ const WeatherSection = () => {
 
   return (
     <div className="md:w-[47%] w-full h-full flex flex-col gap-5 p-5 bg-CARD_BG_DARK rounded-md font-SAM3">
-      <div className="w-full h-[50%] flex justify-between gap-5 text-lg">
+      <div className="w-full h-[55%] flex justify-between gap-5 text-lg">
         <div className="flex flex-col">
           <p className="text-[25px]">
             {month}/{date}
           </p>
           <p>{weatherData?.name}</p>
-          <div className="w-full flex gap-3 items-center mt-3 -md-1">
+          <div className="w-full flex gap-3 items-center pt-1.5 -md-1">
             <span
               className={`w-[18px] h-[18px] rounded-full flex items-center justify-center bg-${weatherData?.main.humidity >= 40 && weatherData?.main.humidity <= 55 ? "blue" : weatherData?.main.humidity > 55 && weatherData?.main.humidity <= 65 ? "green" : weatherData?.main.humidity > 65 && weatherData?.main.humidity <= 70 ? "yellow" : weatherData?.main.humidity > 70 && weatherData?.main.humidity <= 75 ? "orange" : "red"}-500`}
             >
@@ -63,7 +63,7 @@ const WeatherSection = () => {
             </span>
             <span>{weatherData?.main.humidity}%</span>
           </div>
-          <div className="w-full flex gap-3 items-center">
+          <div className="w-full flex gap-3 items-center -mt-0.5">
             <span
               className={`w-[18px] h-[18px] rounded-full flex items-center justify-center bg-${airQuality?.list[0].main.aqi === 1 ? "blue" : airQuality?.list[0].main.aqi === 2 ? "green" : airQuality?.list[0].main.aqi === 3 ? "yellow" : airQuality?.list[0].main.aqi === 4 ? "orange" : "red"}-500`}
             >
@@ -83,13 +83,14 @@ const WeatherSection = () => {
           </div>
         </div>
         <div className="flex flex-col items-end">
-          <div className="w-[70px] h-[70px]">
+          <div className="w-[75px] h-[75px]">
             {weatherData?.weather[0].icon && (
               <Image
                 src={`https://openweathermap.org/img/wn/${weatherData?.weather[0].icon}@2x.png`}
                 alt="weather icon"
                 width={100}
                 height={100}
+                priority
               />
             )}
           </div>
