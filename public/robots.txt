@@ -12,4 +12,4 @@ Disallow: /ranking/*
 User-agent: *
 Allow: /
 
-Sitemap: https://doyeonlee.vercel.app/sitemap.xml
+Sitemap: https://nhips.vercel.app/sitemap.xml

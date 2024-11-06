@@ -6,7 +6,7 @@ const Sitemap = () => {
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://doyeonlee.vercel.app/";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://nhips.vercel.app";
 
   // 정적 페이지 URL 목록
   const staticPages = [
