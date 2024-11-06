@@ -1,13 +1,11 @@
-import Header from "@/components/Header";
 import Layout from "@/components/Layout";
-import EconomyNewsRack from "@/economy/EconomyNewsRack";
+import NewsRack from "@/components/NewsItems/NewsRack";
 
 const EconomyPage = () => {
   return (
     <>
-      <Header />
       <Layout>
-        <EconomyNewsRack key="Economy" />
+        <NewsRack />
       </Layout>
     </>
   );

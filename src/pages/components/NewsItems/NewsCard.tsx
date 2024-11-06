@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { NewsContentsType } from "@/types/DataType";
 
@@ -5,7 +7,7 @@ const NewsCard = ({ headline, imgSrc, link, pressInfo, date, content }: NewsCont
   return (
     <>
       {headline ? (
-        <div className="w-96 max-h-full p-3 flex flex-col gap-4 dark:bg-CARD_BG_DARK bg-CARD_BG_LIGHT rounded-sm">
+        <div className="w-96 max-h-full p-5 flex flex-col gap-4 dark:bg-CARD_BG_DARK bg-CARD_BG_LIGHT rounded-sm">
           <div className="flex flex-col gap-2">
             <a href={link} target="_blank" rel="noreferrer">
               <h4 className="text-lg font-semibold">{headline}</h4>
@@ -18,7 +20,7 @@ const NewsCard = ({ headline, imgSrc, link, pressInfo, date, content }: NewsCont
           {imgSrc && (
             <a href={link} target="_blank" rel="noreferrer">
               <div className="w-full h-[200px] flex justify-center">
-                <Image src={imgSrc} alt="News Image" width={360} height={100} />
+                <Image src={imgSrc} alt="News Image" width={360} height={100} priority />
               </div>
             </a>
           )}

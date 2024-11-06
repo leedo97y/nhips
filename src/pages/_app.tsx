@@ -1,6 +1,8 @@
+import React from "react";
 import "../styles/globals.css";
 import { DefaultSeo } from "next-seo";
 import { ThemeProvider } from "next-themes";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import type { AppProps } from "next/app";
 
 const DEFAULT_SEO = {
@@ -45,12 +47,25 @@ const DEFAULT_SEO = {
 };
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [queryClient] = React.useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            staleTime: 60 * 1000,
+          },
+        },
+      }),
+  );
+
   return (
     <>
       <DefaultSeo {...DEFAULT_SEO} />
-      <ThemeProvider attribute="class">
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider attribute="class">
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </QueryClientProvider>
     </>
   );
 }
