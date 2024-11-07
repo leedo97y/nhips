@@ -21,7 +21,7 @@
 
 ## 개발 환경
 
-- FE : Next.js, Typescript, Tailwindcss, zustand, cheerio
+- FE : Next.js, Typescript, Tailwindcss, zustand, react-query, cheerio
 - Deploy : Vercel
 - Design : [Figma](https://www.figma.com/design/2H1hVZBGeWsm2HYF433A0V/nhips?node-id=0-1&t=oN0DhzkH7euDqiWU-1)
 
